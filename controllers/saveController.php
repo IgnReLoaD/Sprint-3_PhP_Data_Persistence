@@ -14,13 +14,14 @@
     // Si la consulta ha fallat, amb DIE s'acaba l'execució i surt, mostrant el mens.
 
     if (isset($_POST['save_task'])){    
-        $userMaster = $_POST['cmbMaster'];
+        $userMaster  = $_POST['cmbMaster'];
+        $userSlave   = $_POST['cmbSlave'];        
         $description = $_POST['txtDescrip'];        
-        $query = "INSERT INTO tasks(masterUsr_id, descrip) VALUES ('$userMaster', '$description')";   
+        $queryInsert = "INSERT INTO tasks(masterUsr_id, slaveUsr_id, descrip) VALUES ('$userMaster', '$userSlave', '$description')";   
         
-        echo "<br> " . $query;
+        echo "<br> " . $queryInsert;
 
-        $result = mysqli_query($cnn, $query);        
+        $result = mysqli_query($cnn, $queryInsert);        
         if (!$result) {
             $_SESSION['message'] = 'not saved!';
             $_SESSION['message_type'] = 'danger';

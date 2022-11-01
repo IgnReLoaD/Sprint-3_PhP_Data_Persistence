@@ -10,7 +10,7 @@
         <!-- textarea permet més text, posem 3 files, i classe bootstrap form-control -->
         <!-- ACCIO ENVIAR (var 'save_task') i estil bootstrap BLOCK pq ocupi ample tarjeta -->
 
-    <div class="card card-body">
+    <div class="card card-body bg-yellow-200">
         <!-- <form action= -->
         <!-- <?php ROOT_PATH . "/controllers/saveController.php"?> -->
         <!-- method="POST">             -->
@@ -20,16 +20,24 @@
                 <select class="form-control" id ="cmbMaster" name="cmbMaster" autofocus>
                     <option value="0" name="optMaster">usuari Master...</option>                    
                     <?php                      
-                        echo $fieldset;
-                        while ($fieldset = mysqli_fetch_array($recordsetUsers)){
-                            echo'<option value="'.$fieldset['id_user'].'">'.$fieldset['rol'].' - '.$fieldset['name'].'</option>';
+                        // echo $fieldset;
+                        while ($fieldset1 = mysqli_fetch_array($recordsetUsers1)){
+                            echo'<option value="'.$fieldset1['id_user'].'">'.$fieldset1['rol'].' - '.$fieldset1['name'].'</option>';
                         }
                     ?>
                 </select> 
             </div>
-            <!-- <div class="form-group">                
-                <input class="form-control" type="text" name="master" placeholder="master user name">
-            </div> -->
+            <div class="form-group">                
+                <select class="form-control" id ="cmbSlave" name="cmbSlave">
+                    <option value="0" name="optSlave">usuari Slave...</option> 
+                    <?php                      
+                        // echo $fieldset;
+                        while ($fieldset2 = mysqli_fetch_array($recordsetUsers2)){
+                            echo'<option value="'.$fieldset2['id_user'].'">'.$fieldset2['rol'].' - '.$fieldset2['name'].'</option>';
+                        }
+                    ?>
+                </select> 
+            </div>
             <div class="form-group">                
                 <textarea class="form-control" name="txtDescrip" id="txtDescrip" rows="3" placeholder="task descrip..."></textarea>
             </div>            

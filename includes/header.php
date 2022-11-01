@@ -18,7 +18,7 @@
     <!-- font awesome 5  -->
     <script src="https://kit.fontawesome.com/afe5486742.js" crossorigin="anonymous"></script>    
 </head>
-<body>
+<body class="bg-blue-200">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <div class="d-inline">

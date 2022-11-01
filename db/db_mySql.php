@@ -47,4 +47,5 @@
 
     // dades combo desplegable usuaris:
     $queryUsersAll = "SELECT * FROM users";
-    $recordsetUsers = mysqli_query($cnn,$queryUsersAll);
+    $recordsetUsers1 = mysqli_query($cnn,$queryUsersAll);
+    $recordsetUsers2 = mysqli_query($cnn,$queryUsersAll);

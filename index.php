@@ -1,32 +1,36 @@
 <?php
     include("./includes/header.php");
-    include("./controllers/controller.php");
+    include("./controllers/mainController.php");
+    include("./includes/bdSelector.php");
 ?>
-    <!-- INI MAIN ----------- -->
-    <section>
-        <form action="index.php" method="post">
-            <label for="cmbData">Selecciona la font de dades: </label>
-            <select id="cmbData" name="cmbData">
-                <option value="bjson">BJSON - Arxiu de JavaScript Object Notation.</option>
-                <option value="mysql">mySql - Base de dades implementada en mySQL.</option>                
-                <option value="mongo">mongo - Base de dades implementada en Mongo.</option>  
-            </select>            
-            &nbsp; &nbsp;<input type="submit" value=" Endavant! ">
-            <hr>     
-        </form>
-    </section>
+    <!-- sección con formulario con un contenedor (izq) y una tabla (der),
+    la class container permite centrar (agrega espacios a todos los lados) 
+    y un padding de 4 para que se vea bien, con una fila y dentro dos columnas 
+    la primera columna es de tamaño 4 cols (md-4) 
+    ... para colocar un formulario aspecto tarjeta (un div con classe card)
+    y una columna de 8 para añadir las tareas que vamos creando -->
 
-    <?php
-        if (isset($_POST['cmbData'])) {
-            // ENTRADA DE DADES - en view
-            $strData = $_POST['cmbData'];
-            // LLOGICA DE DADES - en controller
-            $strResult = actions($strData);
-            // SORTIDA DE DADES - en view
-            output($strResult);
-        }
-    ?>
-    <!-- END MAIN --------------- -->
+    <main class="container p-4">
+        <section class="row">
+            <!-- div izquierdo para el formulario de entrada de datos  -->
+            <inputs class="col-md-4">                
+                <?php
+                //  aquí un pedazo php que muestre los mensajes "grabado ok" 
+                include("./views/msgsView.php");
+                //  aquí un pedazo php que muestre Formulario entrada datos
+                include("./views/formView.php");
+                ?>
+            </inputs>
+            <!-- div derecho para la tabla del listado de datos  -->
+            <outputs class="col-md-8">
+                <?php
+                //  aquí un pedazo php que muestre una tabla con los datos
+                include("./views/listView.php");
+                ?>
+            </outputs>
+        </section>
+    </main>
+
 <?php    
     include("./includes/footer.php");
 ?>

@@ -18,8 +18,8 @@
                 <tr>
                     <td> <?php echo $row['descrip'] ?> </td>
                     <td> <?php echo $row['created_at'] ?> </td>
-                    <td> <?php echo $row['masterUsr'] ?> </td>
-                    <td> <?php echo $row['slaveUsr'] ?> </td>
+                    <td> <?php echo $row['masterUsr_id'] ?> </td>
+                    <td> <?php echo $row['slaveUsr_id'] ?> </td>
                     <td> <a href="edit.php?id=<?php echo $row['id'] ?> " class="btn btn-secondary">
                             <i class="fas fa-marker"></i>
                             </a>

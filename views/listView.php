@@ -20,10 +20,10 @@
                     <td> <?php echo $row['created_at'] ?> </td>
                     <td> <?php echo $row['masterUsr_id'] ?> </td>
                     <td> <?php echo $row['slaveUsr_id'] ?> </td>
-                    <td> <a href="../controllers/editController.php?id=<?php echo $row['id'] ?> " class="btn btn-secondary">
+                    <td> <a href="controllers/editController.php?id=<?php echo $row['id_task'] ?> " class="btn btn-secondary">
                             <i class="fas fa-marker"></i>
                             </a>
-                            <a href="../controllers/deleteController.php?id=<?php echo $row['id'] ?> " class="btn btn-danger">
+                            <a href="controllers/deleteController.php?id=<?php echo $row['id_task'] ?> " class="btn btn-danger">
                             <i class="far fa-trash-alt"></i>
                             </a>
                     </td>

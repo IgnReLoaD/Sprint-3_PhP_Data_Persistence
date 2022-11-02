@@ -26,23 +26,23 @@
                       $nomNostraBaseDeDades);
         
     // debugar
-    printf("Server: " . $nomServerBaseDeDades . "<br>");
-    printf("Usuari: " . $nomUsuariBaseDeDades . "<br>");
-    printf("Passwd: " . $pwdUsuariBaseDeDades . "<br>");
-    printf("BDades: " . $nomNostraBaseDeDades . "<br>");
+    printf("Server: " . $nomServerBaseDeDades . " / ");
+    printf("Usuari: " . $nomUsuariBaseDeDades . " / ");
+    printf("Passwd: " . $pwdUsuariBaseDeDades . " / ");
+    printf("BDades: " . $nomNostraBaseDeDades . " / ");
 
     // comprobar conexió:
     if (isset($cnn)){
-        echo "DB is connected.<br>";
+        echo "DB is connected. / ";
     }
 
     if ($cnn->connect_error)
     {
-        printf("Error de connexió a la BD.<br>");
+        printf("Error de connexió a la BD.");
     }
     else
     {
-        printf("Connexió ok!<br>");
+        printf("Connexió ok!");
     }
 
     // dades combo desplegable usuaris:
